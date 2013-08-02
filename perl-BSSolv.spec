@@ -18,8 +18,8 @@
 %global gitrev 9ef394f
 
 Name:           perl-BSSolv
-Version:        0.18.2
-Release:        3.git%{gitrev}%{?dist}
+Version:        0.18.3
+Release:        1.git%{gitrev}%{?dist}
 Url:            https://github.com/openSUSE/open-build-service
 Source0:        %{name}-%{version}.tar.gz
 
@@ -68,6 +68,9 @@ find $RPM_BUILD_ROOT -depth -type d -exec rmdir {} 2>/dev/null \;
 %{perl_vendorarch}/auto/BSSolv
 
 %changelog
+* Fri Aug 02 2013 Miroslav Suchý <msuchy@redhat.com> 0.18.3-1.git9ef394f
+- initial package
+
 * Mon Jul 22 2013 Miroslav Suchý <msuchy@redhat.com> 0.18.2-3.git9ef394f
 - use libsolv from distribution (msuchy@redhat.com)
 - do not BR perl-devel and gcc-c++ (msuchy@redhat.com)
