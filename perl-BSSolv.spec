@@ -21,12 +21,7 @@ Name:           perl-BSSolv
 Version:        0.18.2
 Release:        3.git%{gitrev}%{?dist}
 Url:            https://github.com/openSUSE/open-build-service
-#Taken from https://github.com/openSUSE/open-build-service/tree/master/src/backend
-#from revision %{gitrev}
-Source0:        Makefile.PL
-Source1:        BSSolv.pm
-Source2:        BSSolv.xs
-Source3:        typemap
+Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  libsolv-devel >= 0.3.0-7
 Requires:       libsolv
@@ -54,8 +49,7 @@ Group:          Development/Libraries
 Using a Satisfyability Solver to compute package dependencies.
 
 %prep
-%setup -c %{name}-%{version}-%{release} -T
-cp %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} .
+%setup -q
 
 %build
 perl Makefile.PL
